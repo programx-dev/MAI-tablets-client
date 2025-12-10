@@ -1,16 +1,25 @@
 {
   "expo": {
-    "name": "smartdoctor",
-    "slug": "smartdoctor",
+    "name": "MAI Tablets",
+    "assetBundlePatterns": [
+      "**/*",
+      "assets/models/phi-3-mini/**"
+    ],
+    "slug": "mai-tablets",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "smartdoctor",
+    "scheme": "mai-tablets",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mai.tablets",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +28,9 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mai.tablets",
+      "versionCode": 1
     },
     "web": {
       "output": "static",
@@ -30,7 +41,15 @@
     },
     "plugins": [
       "expo-router",
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-localization",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "MAI Tablets нужен доступ к камере для сканирования QR-кодов."
+        }
+      ],
+      "onnxruntime-react-native"
     ],
     "experiments": {
       "typedRoutes": true,
